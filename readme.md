@@ -80,3 +80,4 @@ El proyecto sigue un patrón MVC (Modelo Vista Controlador).
 | es.jma.prestamos.servicios.impl | Implementación de los servicios |
 | es.jma.prestamos.utils | Clases de utilidad |
 | es.jma.prestamos.validadores | Clases de utilidad para validar |
+| es.jma.prestamos.junit.* | Algunas pruebas unitarias que se han hecho |
