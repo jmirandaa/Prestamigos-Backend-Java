@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+	<div id="snackbar-container" class="mdl-js-snackbar mdl-snackbar">
+		<div class="mdl-snackbar__text"></div>
+		<button class="mdl-snackbar__action" type="button"></button>
+	</div>
+			    
+	<script>
+    <c:if test="${not empty requestScope.error}">
+		setTimeout(function()
+		{ 
+				(function() {
+					  'use strict';
+					  var snackbarContainer = document.querySelector('#snackbar-container');
+					  var handler = function(event) {
+						  };	  
+					  var data = {
+					  	      message: '${requestScope.error}',
+					  	      timeout: 10000
+					  	    };
+					  snackbarContainer.MaterialSnackbar.showSnackbar(data);	  
+					}());		
+		}, 200);			
+
+	</c:if>		
+	</script> 

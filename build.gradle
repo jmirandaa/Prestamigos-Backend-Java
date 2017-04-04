@@ -1,0 +1,71 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = 1.8
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    //JSON
+  	compile 'org.json:json:20140107'
+    compile 'com.google.code.gson:gson:2.3.1'
+	compile 'org.apache.cxf:cxf-rt-frontend-jaxrs:3.0.4'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.2.3'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.2.3'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:2.2.3'	
+	
+	//Spring
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+	compile 'org.springframework:spring-context:4.0.3.RELEASE'
+	testCompile 'org.springframework:spring-test:4.0.3.RELEASE'
+	compile 'org.springframework:spring-webmvc:4.0.3.RELEASE'
+	compile 'org.springframework:spring-context-support:4.0.3.RELEASE'
+	compile 'org.springframework:spring-orm:4.0.3.RELEASE'
+	runtime 'javax.servlet:jstl:1.2'
+	
+	//Hibernate
+	compile 'org.hibernate:hibernate-core:5.1.0.Final'
+	compile group: 'org.hibernate', name: 'hibernate-java8', version: '5.1.0.Final'
+	compile 'org.apache.commons:commons-dbcp2:2.0'
+	compile 'mysql:mysql-connector-java:5.1.30'
+	
+	//Log4j
+	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
+  	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
+  	compile group: 'org.apache.logging.log4j', name: 'log4j-web', version: '2.5'
+
+	//Imagen
+  	compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
+  	compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
+  	
+  	//Email
+  	compile 'javax.mail:mail:1.4.7'
+	compile 'javax.activation:activation:1.1.1'
+	
+	//Validador
+	compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
