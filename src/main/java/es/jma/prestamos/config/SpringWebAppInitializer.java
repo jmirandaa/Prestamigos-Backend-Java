@@ -29,6 +29,10 @@ public class SpringWebAppInitializer implements WebApplicationInitializer{
         filterRegistration.setInitParameter("forceEncoding", "true");
         filterRegistration.addMappingForUrlPatterns(null, false, "/*");
         
+        FilterRegistration.Dynamic filterRegistration2 = servletContext.addFilter("cors", es.jma.prestamos.config.CORSFilter.class);
+        filterRegistration2.setAsyncSupported(true);
+        filterRegistration2.addMappingForUrlPatterns(null, false, "/*");        
+        
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet(
                 "SpringDispatcher", new DispatcherServlet(appContext));
         dispatcher.setLoadOnStartup(1);

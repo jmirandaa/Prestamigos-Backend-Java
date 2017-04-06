@@ -8,6 +8,7 @@ Prestamigos es una aplicación para gestionar deudas y préstamos. Este proyecto
  
 También se ha incluído una interfaz web usando los componentes de Java EE (servlets, jsp...) sin profundizar demasiado, ya que en el futuro se reemplazará por Angular 2 ya que permite que el cliente gestione toda la UI limitándose el servidor a servir peticiones.
 
+Nota: ¡Se requiere Java 8!
 ### Tecnologías
 
 Se usan las siguientes librerías y framework de Java:
@@ -18,6 +19,17 @@ Se usan las siguientes librerías y framework de Java:
 * [log4j](https://logging.apache.org/log4j/2.x/) - Librería para el manejo de logs.
 
 Además para la parte web se hace uso de JSP, JSTL, CSS y jQuery.
+
+### Demo
+Acceso web y raíz
+```sh
+http://lyxeon.es:8080/prestamos/
+```
+
+Por ejemplo, si se quiere hacer una llamada al servicio de login
+```sh
+http://lyxeon.es:8080/prestamos/usuarios/login?email=test@gmail.com&password=secreto
+```
 
 ### Configuración del proyecto
 Se necesitar tener gradle instalado y configurado.
